@@ -1,6 +1,6 @@
 # SVG icons
 
-Icons as CSS design tokens rendered with `mask`, based on [The best way to use icons in Web UIs](https://lea.verou.me/blog/2026/icons/) by Lea Verou.
+Icons as CSS design tokens rendered with `mask`, based on [The best way to use icons in Web UIs](https://lea.verou.me/blog/2026/icons/) by Lea Verou ([@LeaVerou](https://github.com/LeaVerou)).
 
 ## Why
 
