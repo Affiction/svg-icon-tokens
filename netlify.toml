@@ -1,0 +1,8 @@
+[build]
+  base = "demo"
+  command = "npm ci --prefix .. && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NG_CLI_ANALYTICS = "false"
