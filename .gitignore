@@ -3,3 +3,7 @@ node_modules/
 /icons/*.svg
 css/icon-tokens.css
 types/
+
+# Demo
+demo/dist/
+demo/*/src/**/icon-name.ts

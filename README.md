@@ -64,6 +64,8 @@ npm start
 
 The demo must be served over HTTP: masks don't load from `file://`.
 
+Working demos for every framework below live in [`demo/`](demo/).
+
 ## Usage
 
 ```css

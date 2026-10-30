@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG icon tokens demos</title>
+    <style>
+      body {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        font: 16px/1.5 system-ui, sans-serif;
+      }
+
+      details {
+        margin-block: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      summary {
+        padding: 12px 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: 560px;
+        border: 0;
+        border-top: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SVG icon tokens</h1>
+    <p>Each demo is a separate app loaded in an iframe on first expand.</p>
+
+    <details data-src="html/">
+      <summary>HTML + CSS</summary>
+      <iframe title="HTML + CSS demo"></iframe>
+    </details>
+
+    <details data-src="angular/">
+      <summary>Angular + Angular Material</summary>
+      <iframe title="Angular demo"></iframe>
+    </details>
+
+    <details data-src="react/">
+      <summary>React</summary>
+      <iframe title="React demo"></iframe>
+    </details>
+
+    <details data-src="vue/">
+      <summary>Vue</summary>
+      <iframe title="Vue demo"></iframe>
+    </details>
+
+    <script>
+      // Load each demo only when its section is expanded for the first time
+      for (const details of document.querySelectorAll('details[data-src]')) {
+        details.addEventListener('toggle', () => {
+          const iframe = details.querySelector('iframe');
+          if (details.open && !iframe.src) iframe.src = details.dataset.src;
+        });
+      }
+    </script>
+  </body>
+</html>

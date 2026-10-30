@@ -1,0 +1,15 @@
+{
+  "name": "svg-icon-tokens-demo",
+  "private": true,
+  "workspaces": [
+    "angular",
+    "react",
+    "vue"
+  ],
+  "scripts": {
+    "icons": "npm run icons --prefix .. && node ../scripts/build-icon-types.mjs angular/src/app/icon/icon-name.ts && node ../scripts/build-icon-types.mjs react/src/icon/icon-name.ts && node ../scripts/build-icon-types.mjs vue/src/icon/icon-name.ts",
+    "assemble": "mkdir -p dist/icons dist/css dist/html && cp ../icons/*.svg dist/icons/ && cp ../css/*.css dist/css/ && cp ../index.html dist/html/ && cp index.html dist/",
+    "build": "rm -rf dist && npm run icons && npm run build --workspaces && npm run assemble",
+    "start": "npm run build && npx --yes serve dist"
+  }
+}
