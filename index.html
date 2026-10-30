@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG icons demo</title>
+    <link rel="stylesheet" href="/css/icon-tokens.css" />
+    <link rel="stylesheet" href="/css/icons.css" />
+    <style>
+      body {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        font: 16px/1.5 system-ui, sans-serif;
+      }
+
+      section {
+        margin-block: 32px;
+      }
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        padding: 0.5em 1em;
+        font: inherit;
+      }
+
+      /* Icons are chosen in CSS, markup stays clean */
+      .stars {
+        display: flex;
+        gap: 16px;
+        font-size: 64px;
+      }
+
+      .star {
+        --icon-start: var(--icon-star);
+      }
+
+      .red {
+        color: red;
+      }
+
+      .yellow {
+        color: gold;
+      }
+
+      .search {
+        --icon-start: var(--icon-search);
+      }
+
+      .next {
+        --icon-end: var(--icon-arrow-right);
+      }
+
+      .delete {
+        --icon-start: var(--icon-trash);
+        color: crimson;
+      }
+
+      /* heart.svg loads only on first hover */
+      .favorite {
+        --icon-start: var(--icon-star);
+      }
+
+      .favorite:hover {
+        --icon-start: var(--icon-heart);
+        color: deeppink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SVG icons</h1>
+
+    <p>
+      Requires Chrome/Edge 120+, Safari 18+ or Firefox 151+. Safari has known WebKit bugs,
+      see the <a href="README.md">README</a>.
+    </p>
+
+    <p id="file-warning" hidden>
+      ⚠️ This page is opened via <code>file://</code>, so the icons won't load.
+      Run <code>npm start</code> and open it via localhost.
+    </p>
+    <script>
+      if (location.protocol === 'file:') {
+        document.getElementById('file-warning').hidden = false;
+      }
+    </script>
+
+    <section>
+      <h2>Color via <code>color</code></h2>
+      <div class="stars">
+        <span class="star red"></span>
+        <span class="star yellow"></span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Icons in buttons</h2>
+      <button class="search">Search</button>
+      <button class="next">Next</button>
+      <button class="delete" aria-label="Delete"></button>
+    </section>
+
+    <section>
+      <h2>Icon change on state</h2>
+      <button class="favorite">Hover me</button>
+    </section>
+
+    <section>
+      <h2>Icon inline with text</h2>
+      <p>Text with an <span class="star">icon</span> in the middle of a line.</p>
+    </section>
+  </body>
+</html>

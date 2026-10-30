@@ -1,0 +1,15 @@
+{
+  "name": "svg-icons",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "icons:optimize": "node scripts/optimize-icons.mjs",
+    "icons:tokens": "node scripts/build-icon-tokens.mjs",
+    "icons:types": "node scripts/build-icon-types.mjs",
+    "icons": "npm run icons:optimize && npm run icons:tokens && npm run icons:types",
+    "start": "npm run icons && npx --yes serve ."
+  },
+  "devDependencies": {
+    "svgo": "^4.1.0"
+  }
+}

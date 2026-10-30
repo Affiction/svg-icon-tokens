@@ -1,0 +1,49 @@
+/*
+ * Icon slots. Set one on any element to a token from icon-tokens.css:
+ *   .search { --icon-start: var(--icon-search); }  -> icon before content
+ *   .next   { --icon-end: var(--icon-arrow-right); } -> icon after content
+ * The icon takes its color from `color` (currentColor).
+ */
+
+/* Not inherited, so only the element that sets a slot gets an icon */
+@property --icon-start {
+  syntax: "*";
+  inherits: false;
+}
+
+@property --icon-end {
+  syntax: "*";
+  inherits: false;
+}
+
+@container style(--icon-start) {
+  ::before {
+    --icon-start: inherit;
+    content: "";
+    display: inline-block;
+    flex: none;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    mask: var(--icon-start) no-repeat center / contain;
+    pointer-events: none;
+    forced-color-adjust: none;
+  }
+}
+
+@container style(--icon-end) {
+  ::after {
+    --icon-end: inherit;
+    content: "";
+    display: inline-block;
+    flex: none;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    mask: var(--icon-end) no-repeat center / contain;
+    pointer-events: none;
+    forced-color-adjust: none;
+  }
+}
